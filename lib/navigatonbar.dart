@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:monsoonapp/My_Profile.dart';
 import 'package:monsoonapp/Search.dart';
+import 'package:monsoonapp/favourite.dart';
 import 'package:monsoonapp/home.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
@@ -19,7 +20,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               icon: GestureDetector(
                     onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const HomePage()));
+                      MaterialPageRoute(builder: (context) =>  HomePage()));
                     },
                 child: Container(
                   width: 30,
@@ -54,13 +55,19 @@ class CustomBottomNavigationBar extends StatelessWidget {
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Container(
-                width: 30,
-                height: 30,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/Love.png"),
-                    fit: BoxFit.contain,
+              icon: GestureDetector(
+                    onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Favourites()));
+                    },
+                child: Container(
+                  width: 30,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/Love.png"),
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
               ),
